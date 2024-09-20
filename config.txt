@@ -1,0 +1,2 @@
+git config --global user.name XuanYi0905
+git config --global user.email xuanyi2209@nutc.edu.tw
