@@ -7,7 +7,12 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">{{ message }}
+      <button @click="count++">
+        count is: {{ count }}
+      </button>
+    </div>
+
 
 </body>
 <script>
@@ -15,9 +20,9 @@
   
     createApp({
       setup() {
-        const message = ref('Hello vue!')
+        const message = ref('No message')
         return {
-          message
+          count: ref(0), message
         }
       }
     }).mount('#app')
