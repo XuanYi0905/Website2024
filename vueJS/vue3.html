@@ -9,7 +9,7 @@
 <body>
     <div id="app">
       <ul>
-        <li v-for="item in todos">{{item.text}} <img src="images/+item.photo"></li>
+        <li v-for="item in todos">{{item.text}} <img :src="'images/'+item.photo"></li>
       </ul>
 
     </div>
