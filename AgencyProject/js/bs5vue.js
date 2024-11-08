@@ -19,8 +19,23 @@ createApp({
         return{
             Portfolio:[
                 {modal: "#portfolioModal1", imgSrc:"roundicons.png", heading:"Round Icons", text:"Graphic Design"},
-                {}
+                {modal: "#portfolioModal2", imgSrc:"startup-framework.png", heading:"Startup Framework", text:"Website Design"},
+                {modal: "#portfolioModal3", imgSrc:"treehouse.png", heading:"Treehouse", text:"Website Design"},
+                {modal: "#portfolioModal4", imgSrc:"golden.png", heading:"Golden", text:"Website Design"},
+                {modal: "#portfolioModal5", imgSrc:"escape.png", heading:"Escape", text:"Website Design"},
+                {modal: "#portfolioModal6", imgSrc:"dreams.png", heading:"Dreams", text:"Website Design"}
             ]
         }
     }
 }).mount("#portfolio")
+
+createApp({
+    data() {
+        return{
+            About:[
+                {}
+                
+            ]
+        }
+    }
+}).mount("#about")
