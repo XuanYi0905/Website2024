@@ -15,6 +15,9 @@ server.get("/services", (req, res)=>{
     res.send(Services);
 })
 
+var DB = require("nedb-promises"); 
+var Portfolio = DB.create(__dirname+"/profolio.db");  Profolio.insert({modal: "#portfolioModal1", imgSrc:"roundicons.png", heading:"Round Icons", text:"Graphic Design"})
+
 server.get("/portfolio", (req, res)=>{
 
     res.send("portfolio");
