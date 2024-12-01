@@ -16,7 +16,7 @@ header{
 }
 #menu{
     width: 674px;
-    background: linear-gradient(#333,#000);
+    background: linear-gradient(#6e6e6e,#000);
     margin-left: 3px;
     float: left;
     padding: 0px;
@@ -42,7 +42,7 @@ header{
 }
 
 #menu a:hover{
-    color: #f00;
+    color: rgb(68, 68, 68);
     text-decoration: underline;
     background: linear-gradient(#000,#666);
 }

@@ -1,0 +1,10 @@
+#main{
+    width: 0 auto;
+    background: #b0906b;
+    margin: 0 auto;
+}
+
+#content1{
+    width: fit-content;
+    text-align: center;
+}
