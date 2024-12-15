@@ -1,25 +1,168 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+} 
+
+.navbar-nav .nav-link {
+  color: white; 
+  text-decoration: none;
+  transition: color 0.3s; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: rgb(243, 220, 188);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 #main{
-    width: 0 auto;
-    background: #b0906b;
-    margin: 0 auto;
+  width: 0 auto;
+  background: #b0906b;
+  margin: 0 auto;
 }
 
 #content1{
-    text-align: center;
-    font-style: italic;
+  text-align: center;
+  font-style: italic;
+  background-color: #c2a481;
 }
 
 #content2{
-    text-align: center;
+  text-align: center;
 }
 
 #footer{
-    clear:both;
-    width:0px auto;
-    background: linear-gradient(#c7a680,#8f704c);
-    color:#fff;
-    text-align: center;
-    padding-top:15px;
-    padding-bottom: 5px;
-    text-decoration: none;
+  clear:both;
+  width:0px auto;
+  background: linear-gradient(#c7a680,#8f704c);
+  color:#fff;
+  text-align: center;
+  padding-top:15px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+section#contact {
+  background-color: #c2a481;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section#contact .form-group {
+  margin-bottom: 25px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+  
+section#contact .form-group input,
+section#contact .form-group textarea {
+  padding: 20px;
+}
+
+section#contact .form-group input.form-control {
+  height: auto;
+}
+
+section#contact .form-group textarea.form-control {
+  height: 180px;
+}
+
+section#contact .form-control:focus {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
+section#contact ::-webkit-input-placeholder {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #afafaf;
+}
+
+section#contact :-moz-placeholder {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+}
+  
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+  
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #dbdbdb; 
+  color: #b08b60; 
+}
+  
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.trigger-svg {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.trigger-svg:hover {
+  transform: scale(1.1); 
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(129, 129, 129);
+}
+
+.trigger-svg2:hover {
+  transform: scale(1.1); 
 }

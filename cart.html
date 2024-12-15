@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <style>
+        #shoppingCart {
+            box-sizing: border-box;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+            border: 1px solid rgb(250, 5, 46);
+        }
+        
+        #shoppingCart thead {
+            color: white;
+            background-color: rgb(247, 17, 93);
+        }
+        
+        #shoppingCart tfoot {
+            text-align: right;
+            color: white;
+            background-color: rgb(247, 17, 93);
+        }
+        
+        #shoppingCart tr td {
+            width: 250px;
+            padding: 10px;
+        }
+        
+        #shoppingCart tr td input {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 18px;
+            outline: 0;
+            border: 1px rgb(239, 239, 239) solid;
+        }
+        
+        #shoppingCart tr td input[name='number'] {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="shoppingCart" border="1" width=1200 height=550>
+        <thead>
+            <tr style="height: 50px;">
+                <th>商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="num">
+                <td>相机</td>
+                <td class="price">8</td>
+                <td>
+                    <input type="button" name="minus" value="-">
+                    <input type="text" name="number" value="0">
+                    <input type="button" name="add" value="+">
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr class="num">
+                <td>相机</td>
+                <td class="price">10</td>
+                <td>
+                    <input type="button" name="minus" value="-">
+                    <input type="text" name="number" value="0">
+                    <input type="button" name="add" value="+">
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr class="num">
+                <td>相机</td>
+                <td class="price">12.5</td>
+                <td>
+                    <input type="button" name="minus" value="-">
+                    <input type="text" name="number" value="0">
+                    <input type="button" name="add" value="+">
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr class="num">
+                <td>相机</td>
+                <td class="price">23</td>
+                <td>
+                    <input type="button" name="minus" value="-">
+                    <input type="text" name="number" value="0">
+                    <input type="button" name="add" value="+">
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr style="background-color: white; height: 10px;"></tr>
+            <tr style="height: 50px;">
+                <td colspan="3">已选中商品:<span id="sum">0</span>个</td>
+                <td>合计费用￥<span id="total">0</span></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        /**
+         * num:商品数量
+         * add:+
+         * minus:-
+         * number:数量
+         * price:单价
+         * sum:总数
+         * total:总价
+         * subtotal:小计
+         **/
+        let num = document.querySelectorAll(".num"),
+            add = document.querySelectorAll("[name='add']"),
+            minus = document.querySelectorAll("[name='minus']"),
+            number = document.querySelectorAll("[name='number']"),
+            price = document.querySelectorAll(".price"),
+            sum = document.querySelector("#sum"),
+            total = document.querySelector("#total"),
+            subtotal = document.querySelectorAll(".subtotal");
+
+        //数量改变
+        for (let i = 0; i < num.length; i++) {
+            add[i].index = i;
+            minus[i].index = i;
+            add[i].onclick = function() {
+                //数量增加
+                number[this.index].innerHTML = number[this.index].value++;
+                let sign = this.index;
+                operation(sign);
+            }
+
+            minus[i].onclick = function() {
+                if (number[this.index].value > 0) {
+                    //数量减少
+                    number[this.index].innerHTML = number[this.index].value--;
+                    let sign = this.index;
+                    operation(sign);
+                }
+            }
+
+            function operation(sign) {
+                //小计改变
+                subtotal[sign].innerHTML = price[sign].innerHTML * number[sign].value;
+                sum.innerHTML = 0
+                total.innerHTML = 0
+                for (let j = 0; j < number.length; j++) {
+                    //已选中商品数目改变
+                    sum.innerHTML = number[j].value * 1 + sum.innerHTML * 1;
+                    //商品总价改变
+                    total.innerHTML = subtotal[j].innerHTML * 1 + total.innerHTML * 1;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
