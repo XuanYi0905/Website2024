@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY SHOPPING CART</title>
+    <link rel="stylesheet" href="css/final3.css">
+</head>
+
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <img src="images/logo1.png" alt="LOGO">
+            <button onclick="location.href='indexfinal.html';">Home</button>
+        </div>
+        </div>
+        <img src="images/logo2.png" alt="LOGO">
+        <h1> .My Shopping Cart. </h1>
+            
+    </header>
+
+    <table id="shoppingCart">
+        <thead>
+            <tr>
+                <th>NO.</th>
+                <th>
+                    <span class="select-all-label"></span>
+                    <input type="checkbox" id="selectAllHeader">
+                </th>
+
+                <th>PRODUCT</th>
+                <th>PRICE (NTD) </th>
+                <th>AMOUNT</th>
+                <th>SUBTOTAL (NTD) </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="num">
+                <td class="index">1</td>
+                <td><input type="checkbox" class="selectItem"></td>
+                <td>
+                    <img src="images/t26.jpg" alt="商品圖片">
+                    <div class="product-name">TEOLAEGI</div>
+                </td>
+                <td class="price">1500</td>
+                <td>
+                    <div class="quantity-control">
+                        <input type="button" name="minus" value="-">
+                        <input type="text" name="number" value="1">
+                        <input type="button" name="add" value="+">
+                    </div>
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+
+            <tr class="num">
+                <td class="index">2</td>
+                <td><input type="checkbox" class="selectItem"></td>
+                <td>
+                    <img src="images/t23.jpg" alt="商品圖片">
+                    <div class="product-name">PILLOW</div>
+                </td>
+                <td class="price">1200</td>
+                <td>
+                    <div class="quantity-control">
+                        <input type="button" name="minus" value="-">
+                        <input type="text" name="number" value="1">
+                        <input type="button" name="add" value="+">
+                    </div>
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+
+            <tr class="num">
+                <td class="index">3</td>
+                <td><input type="checkbox" class="selectItem"></td>
+                <td>
+                    <img src="images/t28.jpg" alt="商品圖片">
+                    <div class="product-name">SHOSES</div>
+                </td>
+                <td class="price">800</td>
+                <td>
+                    <div class="quantity-control">
+                        <input type="button" name="minus" value="-">
+                        <input type="text" name="number" value="1">
+                        <input type="button" name="add" value="+">
+                    </div>
+                </td>
+                <td class="subtotal">0</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+
+            <tr id="total-row">
+                <td colspan="5">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</td>
+                <td>TOTAL : <span id="total">0</span></td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+    <div id="confirmPurchase">
+        <p>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<button>GO TO BUY</button>
+    </div>
+
+    <script>
+
+        const rows = document.querySelectorAll(".num");
+        const total = document.querySelector("#total");
+        const selectAllHeader = document.querySelector("#selectAllHeader");
+        const selectItems = document.querySelectorAll(".selectItem");
+
+        function updateTotal() {
+            let overallTotal = 0;
+            rows.forEach((row) => {
+                const checkbox = row.querySelector(".selectItem");
+                const number = row.querySelector("[name='number']");
+                const price = row.querySelector(".price");
+                const subtotal = row.querySelector(".subtotal");
+
+                if (checkbox.checked) {
+                    const subTotalValue = parseInt(price.textContent) * parseInt(number.value);
+                    subtotal.textContent = subTotalValue;
+                    overallTotal += subTotalValue;
+                } else {
+                    subtotal.textContent = 0;
+                }
+            });
+            total.textContent = overallTotal;
+        }
+
+        rows.forEach((row) => {
+            const add = row.querySelector("[name='add']");
+            const minus = row.querySelector("[name='minus']");
+            const number = row.querySelector("[name='number']");
+            const checkbox = row.querySelector(".selectItem");
+
+            add.onclick = () => {
+                number.value = parseInt(number.value) + 1;
+                checkbox.checked = true; // 自动勾选
+                updateTotal();
+            };
+
+            minus.onclick = () => {
+                if (number.value > 1) {
+                    number.value = parseInt(number.value) - 1;
+                    updateTotal();
+                }
+            };
+
+            checkbox.onchange = updateTotal;
+        });
+
+        function toggleSelectAll(checked) {
+            selectItems.forEach((item) => {
+                item.checked = checked;
+            });
+            updateTotal();
+        }
+
+        selectAllHeader.onchange = () => {
+            toggleSelectAll(selectAllHeader.checked);
+        };
+
+    </script>
+</body>
+
+</html>

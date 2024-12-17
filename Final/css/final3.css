@@ -1,0 +1,250 @@
+body {
+    background-color: bisque;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #b0906b;
+    color: white;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+header button {
+    font-size: 16px; 
+    padding: 5px 10px; 
+    background-color: #b0906b; 
+    color: white; 
+    border-color: #ffffff; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+#shoppingCart {
+    box-sizing: border-box;
+    margin: 0;
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid #b0906b;
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    margin: 30px auto;
+}
+
+#shoppingCart thead {
+    color: white;
+    background-color: #b0906b;
+    font-size: 18px;
+}
+
+#shoppingCart tfoot {
+    color: white;
+    background-color: #b0906b;
+    font-size: 18px;
+    text-align: center;
+}
+
+#shoppingCart tr {
+    border-bottom: 2px solid #ddd;
+}
+
+#shoppingCart tr:last-child {
+    border-bottom: none;
+}
+
+#shoppingCart tr td,
+#shoppingCart tr th {
+    padding: 20px;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+#shoppingCart tr td img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+.product-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.quantity-control input[type="text"] {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    outline: 0;
+    border: 1px solid rgb(239, 239, 239);
+}
+
+.quantity-control input[type="button"] {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid #b4b4b4;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#shoppingCart input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+#total-row {
+    text-align: center;
+    padding: 20px;
+}
+
+#confirmPurchase {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#confirmPurchase button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #b0906b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#confirmPurchase button:hover {
+    background-color: #8a6d4f;
+}
+
+.select-all-label {
+    margin-left: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+input[type="checkbox"]#selectAllHeader:checked {
+    accent-color: #757575; /* Set to background color */
+}
+
+input[type="checkbox"] {
+    accent-color: #757575; /* Default checkbox color */
+}
+
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    header img {
+        height: 40px;
+    }
+
+    #shoppingCart {
+        width: 95%;
+    }
+
+    #shoppingCart tr td,
+    #shoppingCart tr th {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #shoppingCart tr td img {
+        width: 100px;
+    }
+
+    .quantity-control input[type="text"] {
+        width: 40px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .quantity-control input[type="button"] {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    #confirmPurchase button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header img {
+        height: 30px;
+    }
+
+    #shoppingCart tr td img {
+        width: 80px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+
+    #shoppingCart tr td,
+    #shoppingCart tr th {
+        font-size: 12px;
+    }
+
+    .quantity-control input[type="text"] {
+        width: 30px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .quantity-control input[type="button"] {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    #confirmPurchase button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
