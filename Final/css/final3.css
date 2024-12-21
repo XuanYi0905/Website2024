@@ -9,7 +9,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    background-color: #b0906b;
+    background-color: #ad8b67;
     color: white;
 }
 
@@ -150,15 +150,15 @@ header button {
 }
 
 input[type="checkbox"]#selectAllHeader:checked {
-    accent-color: #757575; /* Set to background color */
+    accent-color: #636363; 
 }
 
 input[type="checkbox"] {
-    accent-color: #757575; /* Default checkbox color */
+    accent-color: #636363; 
 }
 
 
-/* ========== Responsive Design ========== */
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 18px;

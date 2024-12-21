@@ -16,33 +16,47 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.hr-fade-content {
+    -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);
+    mask-image: linear-gradient(to right, transparent, black, transparent);
+}
+
 .image-container {
   position: relative;
   width: 100%;
-  height: 100%;
+
   overflow: hidden;
 }
 
 .image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-container .hover-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: opacity 0.5s ease;
-}
-
-.image-container .hover-image {
-  opacity: 0; /* 初始隱藏第二張圖片 */
-}
-
-.image-container:hover .default-image {
-  opacity: 0; /* 隱藏第一張圖片 */
+  opacity: 0;
+  z-index: 1;
 }
 
 .image-container:hover .hover-image {
-  opacity: 1; /* 顯示第二張圖片 */
+  opacity: 1;
+}
+
+.image-container .default-image {
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .image-container .hover-image {
+      display: block; 
+  }
 }
 
 #main{
@@ -59,6 +73,14 @@
 
 #content2{
   text-align: center;
+}
+
+#content3{
+  width: auto;
+  text-align: center;
+  background-color: #9e9e9e;
+  font-family: 'Times New Roman', Times, serif;
+  
 }
 
 #footer{
@@ -193,4 +215,32 @@ section#contact :-moz-placeholder {
 
 .trigger-svg2:hover {
   transform: scale(1.1); 
+}
+
+.fade-in-out-section {
+  opacity: 0; 
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.btn-circle {
+  width: 50px; /* 设置按钮宽度 */
+  height: 40px; /* 设置按钮高度 */
+  border-radius: 25%; /* 圆形边框 */
+  text-align: center; /* 文本居中 */
+  line-height: 15px; /* 文本垂直居中 */
+  background-color: #e8b881; /* 背景色 */
+  color: white; /* 字体颜色 */
+  border: none; /* 去掉边框 */
+  cursor: pointer; /* 鼠标指针样式 */
+  transition: background-color 0.3s ease; /* 添加鼠标悬停过渡效果 */
+}
+
+.btn-circle:hover {
+  background-color: #847b74; /* 鼠标悬停时的背景色 */
+}
+
+.rounded-corner {
+  border-radius: 15px; /* 设置圆角半径 */
+  overflow: hidden; /* 确保内容不会超出圆角边框 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 添加阴影（可选） */
 }
