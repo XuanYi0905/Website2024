@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY SHOPPING CART</title>
     <link rel="stylesheet" href="css/final3.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
             <img src="images/logo1.png" alt="LOGO">
             <button onclick="location.href='indexfinal.html';">Home</button>
         </div>
-        </div>
+
         <img src="images/logo2.png" alt="LOGO">
         <h1> .My Shopping Cart. </h1>
             
@@ -32,9 +33,9 @@
                 </th>
 
                 <th>PRODUCT</th>
-                <th>PRICE (NTD) </th>
+                <th>PRICE (NTD)</th>
                 <th>AMOUNT</th>
-                <th>SUBTOTAL (NTD) </th>
+                <th>SUBTOTAL (NTD)</th>
 
             </tr>
         </thead>
@@ -44,7 +45,7 @@
                 <td class="index">1</td>
                 <td><input type="checkbox" class="selectItem"></td>
                 <td>
-                    <img src="images/t26.jpg" alt="商品圖片">
+                    <img src="images/t26.jpg" alt="product">
                     <div class="product-name">TEOLAEGI</div>
                 </td>
                 <td class="price">1500</td>
@@ -62,7 +63,7 @@
                 <td class="index">2</td>
                 <td><input type="checkbox" class="selectItem"></td>
                 <td>
-                    <img src="images/t23.jpg" alt="商品圖片">
+                    <img src="images/t23.jpg" alt="product2">
                     <div class="product-name">PILLOW</div>
                 </td>
                 <td class="price">1200</td>
@@ -80,7 +81,7 @@
                 <td class="index">3</td>
                 <td><input type="checkbox" class="selectItem"></td>
                 <td>
-                    <img src="images/t28.jpg" alt="商品圖片">
+                    <img src="images/t28.jpg" alt="product3">
                     <div class="product-name">SHOSES</div>
                 </td>
                 <td class="price">800</td>
@@ -106,69 +107,71 @@
     </table>
 
     <div id="confirmPurchase">
-        <p>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<button>PROCEED TO CHECKOUT</button>
+       <button>PROCEED TO CHECKOUT</button>
     </div>
 
-    <script>
+</body>
 
-        const rows = document.querySelectorAll(".num");
-        const total = document.querySelector("#total");
-        const selectAllHeader = document.querySelector("#selectAllHeader");
-        const selectItems = document.querySelectorAll(".selectItem");
+<script>
 
-        function updateTotal() {
-            let overallTotal = 0;
-            rows.forEach((row) => {
-                const checkbox = row.querySelector(".selectItem");
-                const number = row.querySelector("[name='number']");
-                const price = row.querySelector(".price");
-                const subtotal = row.querySelector(".subtotal");
+    const rows = document.querySelectorAll(".num");
+    const total = document.querySelector("#total");
+    const selectAllHeader = document.querySelector("#selectAllHeader");
+    const selectItems = document.querySelectorAll(".selectItem");
 
-                if (checkbox.checked) {
-                    const subTotalValue = parseInt(price.textContent) * parseInt(number.value);
-                    subtotal.textContent = subTotalValue;
-                    overallTotal += subTotalValue;
-                } else {
-                    subtotal.textContent = 0;
-                }
-            });
-            total.textContent = overallTotal;
-        }
-
+    function updateTotal() {
+        let overallTotal = 0;
         rows.forEach((row) => {
-            const add = row.querySelector("[name='add']");
-            const minus = row.querySelector("[name='minus']");
-            const number = row.querySelector("[name='number']");
             const checkbox = row.querySelector(".selectItem");
+            const number = row.querySelector("[name='number']");
+            const price = row.querySelector(".price");
+            const subtotal = row.querySelector(".subtotal");
 
-            add.onclick = () => {
-                number.value = parseInt(number.value) + 1;
-                checkbox.checked = true; 
-                updateTotal();
-            };
-
-            minus.onclick = () => {
-                if (number.value > 1) {
-                    number.value = parseInt(number.value) - 1;
-                    updateTotal();
-                }
-            };
-
-            checkbox.onchange = updateTotal;
+            if (checkbox.checked) {
+                const subTotalValue = parseInt(price.textContent) * parseInt(number.value);
+                subtotal.textContent = subTotalValue;
+                overallTotal += subTotalValue;
+            } else {
+                subtotal.textContent = 0;
+            }
         });
+        total.textContent = overallTotal;
+    }
 
-        function toggleSelectAll(checked) {
-            selectItems.forEach((item) => {
-                item.checked = checked;
-            });
+    rows.forEach((row) => {
+        const add = row.querySelector("[name='add']");
+        const minus = row.querySelector("[name='minus']");
+        const number = row.querySelector("[name='number']");
+        const checkbox = row.querySelector(".selectItem");
+
+        add.onclick = () => {
+            number.value = parseInt(number.value) + 1;
+            checkbox.checked = true; 
             updateTotal();
-        }
-
-        selectAllHeader.onchange = () => {
-            toggleSelectAll(selectAllHeader.checked);
         };
 
-    </script>
-</body>
+        minus.onclick = () => {
+            if (number.value > 1) {
+                number.value = parseInt(number.value) - 1;
+                updateTotal();
+            }
+        };
+
+        checkbox.onchange = updateTotal;
+    });
+
+    function toggleSelectAll(checked) {
+        selectItems.forEach((item) => {
+            item.checked = checked;
+        });
+        updateTotal();
+    }
+
+    selectAllHeader.onchange = () => {
+        toggleSelectAll(selectAllHeader.checked);
+    };
+
+</script>
+
 
 </html>

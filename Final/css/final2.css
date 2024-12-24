@@ -68,3 +68,8 @@ a {
 	text-decoration-line: none;
 	color: #fff;
 }
+
+.go-home {
+    text-align: center;
+    margin-top: 20px;
+}

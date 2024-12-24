@@ -67,7 +67,7 @@
 
 #content1{
   text-align: center;
-  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #c2a481;
 }
 
@@ -223,24 +223,77 @@ section#contact :-moz-placeholder {
 }
 
 .btn-circle {
-  width: 50px; /* 设置按钮宽度 */
-  height: 40px; /* 设置按钮高度 */
-  border-radius: 25%; /* 圆形边框 */
-  text-align: center; /* 文本居中 */
-  line-height: 15px; /* 文本垂直居中 */
-  background-color: #e8b881; /* 背景色 */
-  color: white; /* 字体颜色 */
-  border: none; /* 去掉边框 */
-  cursor: pointer; /* 鼠标指针样式 */
-  transition: background-color 0.3s ease; /* 添加鼠标悬停过渡效果 */
+  width: 50px; 
+  height: 40px; 
+  border-radius: 25%; 
+  text-align: center; 
+  line-height: 15px; 
+  background-color: #e8b881; 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
 
 .btn-circle:hover {
-  background-color: #847b74; /* 鼠标悬停时的背景色 */
+  background-color: #847b74; 
 }
 
 .rounded-corner {
-  border-radius: 15px; /* 设置圆角半径 */
-  overflow: hidden; /* 确保内容不会超出圆角边框 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 添加阴影（可选） */
+  border-radius: 15px; 
+  overflow: hidden; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  padding: 8px 8px;
+  background-color: #dbbb93;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.5s, visibility 0.5s; 
+}
+
+.search-container {
+  display: inline-flex;
+  align-items: center; 
+  border-radius: 25px; 
+  padding: 5px 10px; 
+  background-color: white; 
+}
+
+.search-container input {
+  border: none; 
+  outline: none; 
+  flex: 1; 
+  font-size: 13px; 
+}
+
+.search-container svg {
+  color: gray; 
+  cursor: pointer; 
+}
+
+.search-container:hover {
+  box-shadow: 0 0 5px rgba(89, 89, 89, 0.5); 
+}
+
+.hr{
+  border: 2; 
+  border-top: 2px solid rgb(255, 255, 255); 
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .header img {
+    width: 30%;
+  }
 }

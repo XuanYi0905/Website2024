@@ -113,6 +113,16 @@ header button {
     cursor: pointer;
 }
 
+.quantity-control input[type="button"]:hover {
+    background-color: #edba67; 
+    color: white; 
+    transform: scale(1.1); 
+}
+
+.quantity-control input[type="button"]:active {
+    transform: scale(0.95); 
+}
+
 #shoppingCart input[type="checkbox"] {
     width: 16px;
     height: 16px;
@@ -124,8 +134,10 @@ header button {
 }
 
 #confirmPurchase {
-    text-align: center;
-    margin-top: 10px;
+    text-align: right;
+    margin-top: 20px; 
+    margin-right: 160px; 
+    margin-bottom: 30px;
 }
 
 #confirmPurchase button {
