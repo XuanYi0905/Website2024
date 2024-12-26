@@ -32,6 +32,7 @@
   display: block;
   width: 100%;
   height: auto;
+  padding-left: 20px;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -296,4 +297,15 @@ section#contact :-moz-placeholder {
   .header img {
     width: 30%;
   }
+}
+
+#first-line {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+#second-line{
+  border: 2; 
+  border-top: 3px dashed #ccc; 
+  width: 90%; 
+  margin: 50px auto;
 }
