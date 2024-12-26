@@ -114,7 +114,7 @@ header button {
 }
 
 .quantity-control input[type="button"]:hover {
-    background-color: #edba67; 
+    background-color: #c6a17a; 
     color: white; 
     transform: scale(1.1); 
 }
