@@ -178,7 +178,7 @@ section#contact :-moz-placeholder {
   transform: scale(1.1); 
 }
 
-.modal {
+/* .modal {
   display: none; 
   position: fixed;
   top: 0;
@@ -212,7 +212,7 @@ section#contact :-moz-placeholder {
 
 .close:hover {
   color: rgb(129, 129, 129);
-}
+} */
 
 .trigger-svg2:hover {
   transform: scale(1.1); 
@@ -308,6 +308,61 @@ section#contact :-moz-placeholder {
   border-top: 3px dashed #ccc; 
   width: 90%; 
   margin: 50px auto;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; 
+  max-width: 450px; 
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 5px; 
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+      width: 95%; 
+      padding: 15px; 
+  }
 }
 
 
