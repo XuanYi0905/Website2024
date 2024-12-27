@@ -3,7 +3,7 @@ const {createApp,ref}  = Vue;
 var Pajamas = createApp({
     data() {
         return{
-            Portfolio:[
+            Pajamas:[
             { imgSrc: "images/t12.jpg", hoverImg: "images/t32.jpg", heading: "Pajama 1", price: "2000 NTD" },
             { imgSrc: "images/t13.jpg", hoverImg: "images/t48.jpg", heading: "Pajama 2", price: "2000 NTD" },
             { imgSrc: "images/t14.jpg", hoverImg: "images/t47.jpg", heading: "Pajama 3", price: "2000 NTD" },
@@ -13,7 +13,7 @@ var Pajamas = createApp({
     }
 }).mount("#pajamas")
 
-var vueProfolio = createApp({
+var vuePajamas = createApp({
     data() {
         return{
             Pajamas:[]
@@ -22,11 +22,12 @@ var vueProfolio = createApp({
 }).mount("#pajamas")
 
 $.ajax({
+    
     url:"/pajamas",
     method: "get",
     dataType: "json",
     success: results=>{
-        vueProfolio.Pajamas = results;
+        vuePajamas.Pajamas = results;
     }
 
 })
