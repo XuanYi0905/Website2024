@@ -1,0 +1,33 @@
+[
+    {
+      "title": "Image 1",
+      "default_image": "images/t22.jpg",
+      "hover_image": "images/t51.jpg"
+    },
+    {
+      "title": "Image 2",
+      "default_image": "images/t26.jpg",
+      "hover_image": "images/t30.jpg"
+    },
+    {
+      "title": "Image 3",
+      "default_image": "images/t27.jpg",
+      "hover_image": "images/t52.jpg"
+    },
+    {
+      "title": "Image 4",
+      "default_image": "images/t28.jpg",
+      "hover_image": "images/t49.png"
+    },
+    {
+      "title": "Image 5",
+      "default_image": "images/t24.png",
+      "hover_image": "images/t34.png"
+    },
+    {
+      "title": "Image 6",
+      "default_image": "images/t23.jpg",
+      "hover_image": "images/t29.jpg"
+    }
+  ]
+  
