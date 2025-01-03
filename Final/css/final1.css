@@ -101,6 +101,10 @@
   
 }
 
+#product-list{
+  padding-left: 50px;
+}
+
 #footer{
   clear:both;
   width:0px auto;

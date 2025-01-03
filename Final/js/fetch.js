@@ -52,7 +52,6 @@ fetch('images.json')
             container.appendChild(colDiv);
           });
         })
-        .catch(error => console.error('Error loading the JSON:', error));
+.catch(error => console.error('Error loading the JSON:', error));
 
 
-        

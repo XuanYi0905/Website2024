@@ -1,2 +1,0 @@
-new terminal
-> git config
