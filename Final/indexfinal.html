@@ -335,31 +335,32 @@
 
 <script>
 
-   // 獲取元素
+
    const modal = document.getElementById("myModal");
    const triggerSvg = document.querySelector(".trigger-svg");
    const closeBtn = document.querySelector(".close");
    const modalContent = document.querySelector(".modal-content");
 
-   // 點擊SVG顯示Modal
+   
    triggerSvg.addEventListener("click", () => {
-      modal.style.display = "flex"; // 顯示Modal
+      modal.style.display = "flex"; 
    });
 
-   // 點擊關閉按鈕隱藏Modal
+   
    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none"; // 隱藏Modal
+      modal.style.display = "none"; 
    });
 
-   // 阻止點擊Modal內容冒泡，避免觸發背景關閉
+   
    modalContent.addEventListener("click", (event) => {
-      event.stopPropagation(); // 阻止事件冒泡
+      event.stopPropagation(); 
    });
 
-   // 禁止點擊Modal外部背景隱藏
+   
    modal.addEventListener("click", () => {
-      // 不執行任何操作
+      
    });
+
 
 </script>
 
