@@ -5,7 +5,7 @@ fetch('pajamas.json')
 
   data.forEach(item => {
     const colDiv = document.createElement("div");
-    colDiv.classList.add("col-12", "col-md-6", "col-lg-3");
+    colDiv.classList.add("col-6", "col-md-3", "col-lg-3");
 
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("image-container");
@@ -42,7 +42,7 @@ fetch('images.json')
           data.forEach(item => {
             
             const colDiv = document.createElement('div');
-            colDiv.classList.add('col-12', 'col-md-6', 'col-lg-4');
+            colDiv.classList.add('col-6', 'col-md-4', 'col-lg-4');
             colDiv.innerHTML = `
               <div class="image-container">
                 <img class="img-responsive default-image" width="100%" src="${item.default_image}" alt="${item.title}">
