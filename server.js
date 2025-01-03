@@ -2,13 +2,13 @@ var express = require("express");
 var server = express();
 var bodyParser = require("body-parser");
 
-server.use(express.static(__dirname + "/.."));
+server.use(express.static(__dirname + "/Final"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 
 var DB = require("nedb-promises");
-var PajamasDB = DB.create(__dirname + "/../pajamas.db");
-var ContactDB = DB.create(__dirname+"/../contact.db");
+var PajamasDB = DB.create(__dirname + "/Final/pajamas.db");
+var ContactDB = DB.create(__dirname+"/Final/contact.db");
 
 PajamasDB.insert([
   { imgSrc: "images/t12.jpg", hoverImg: "images/t32.jpg", heading: "Pajama 1", price: "2000 NTD" },
