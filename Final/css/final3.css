@@ -211,6 +211,10 @@ input[type="checkbox"] {
         font-size: 16px;
         padding: 8px 16px;
     }
+
+    #confirmPurchase{
+        margin-right: 20px;
+    }
 }
 
 @media (max-width: 1080px) {
