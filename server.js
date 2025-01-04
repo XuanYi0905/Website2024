@@ -2,7 +2,7 @@ var express = require("express");
 var server = express();
 var bodyParser = require("body-parser");
 
-server.use(express.static(__dirname+"/Final/indexfinal.html"));
+server.use(express.static(__dirname+"/Final"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
@@ -12,7 +12,7 @@ var PajamasDB = DB.create(__dirname+"/Final/pajamas.db");
 var ContactDB = DB.create(__dirname+"/Final/contact.db");
 
 server.get("/", (req, res) => {
-  res.send("/Final/indexfinal.html"); 
+  res.sendFile(__dirname+"/Final/indexfinal.html"); 
 });
 
 // PajamasDB.insert([
