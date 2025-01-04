@@ -11,6 +11,10 @@ var DB = require("nedb-promises");
 var PajamasDB = DB.create(__dirname+"/Final/pajamas.db");
 var ContactDB = DB.create(__dirname+"/Final/contact.db");
 
+server.get("/", (req, res) => {
+  res.send("Welcome to my website!"); 
+});
+
 // PajamasDB.insert([
 //   { imgSrc: "images/t12.jpg", hoverImg: "images/t32.jpg", heading: "Pajama 1", price: "2000 NTD" },
 //   { imgSrc: "images/t13.jpg", hoverImg: "images/t48.jpg", heading: "Pajama 2", price: "2000 NTD" },
