@@ -12,7 +12,7 @@ var PajamasDB = DB.create(__dirname+"/Final/pajamas.db");
 var ContactDB = DB.create(__dirname+"/Final/contact.db");
 
 server.get("/", (req, res) => {
-  res.send("Welcome to my website!"); 
+  res.send("/Final/indexfinal.html"); 
 });
 
 // PajamasDB.insert([
