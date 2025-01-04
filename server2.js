@@ -9,9 +9,13 @@ server.use(bodyParser.urlencoded({ extended: true }));
 var DB = require("nedb-promises");
 var ProductsDB = DB.create(__dirname+"/Final/products.db");
 
+
+
 server.get("/", (req, res) => {
-  res.send("Welcome to my website!"); // 或者可以返回其他的 HTML 文件或靜態頁面
+  res.sendFile(__dirname+"/Final/indexfinal.html"); 
 });
+
+
 
 // ProductsDB.insert([
 //   { imgSrc: "images/t36.jpg", name: "CHOCOLATE", price: "NTD $300" },
@@ -42,7 +46,7 @@ server.get("/products", (req, res) => {
     });
 });
 
-var PORT = process.env.PORT || 3000;  
+var PORT = process.env.PORT || 3001;  
 server.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
